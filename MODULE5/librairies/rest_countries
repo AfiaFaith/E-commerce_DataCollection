@@ -2,28 +2,28 @@ import requests
 import random
 import pandas as pd
 from databceao import CurrencyScrapper
-from connexiondb import dataSave
+from connexiondb import datatb
 
-URL_Countries= 'https://restcountries.com/v2/all'
+URL = 'https://restcountries.com/v2/all'
 
 
 class DataSouper(object):
     @classmethod
-    def jsonFetcher(cls,URL_Countries):
+    def jsonFetcher(cls, URL):
         with requests.Session() as session:
-            result = session.get(URL_Countries)
+            result = session.get(URL)
             result = result.json()
             return result
 
 class CountryFetch(object):
     @classmethod
-    def getRequest(cls, URL_Countries):
+    def getRequest(cls, URL):
         return DataSouper \
-            .jsonFetcher(URL_Countries)
+            .jsonFetcher(URL)
 
     @classmethod
-    def getCountryName(cls, URL_Countries):
-        jsonCountries = cls.getRequest(URL_Countries)
+    def getCountryName(cls, URL):
+        jsonCountries = cls.getRequest(URL)
         factory = [
             [item['name'], item['flag']] 
             for item in jsonCountries
@@ -32,7 +32,7 @@ class CountryFetch(object):
 
     @classmethod
     def addCountry(cls, factory):
-        countries = cls.getCountryName(URL_Countries)
+        countries = cls.getCountryName(URL)
         
         for item in factory:
             random_country = random.choice(countries)
@@ -46,7 +46,7 @@ class CountryFetch(object):
         result1 = CountryFetch.addCountry(data)
 
         df=pd.DataFrame(result1)
-        dataSave.getData(df)
+        datatb.getData(df)
         print(df)
 
         return result1

@@ -1,8 +1,8 @@
-from libraries.utils import Utils
-from libraries.datacsv import CsvFactory
-from libraries.datajson import JsonFactory
-from libraries.datahtml2 import HtmlFactory
-from libraries.factories import concatenateList
+from librairies.utils import Utils
+from librairies.datacsv import CsvFactory
+from librairies.datajson import JsonFactory
+from librairies.datahtml import HtmlFactory
+from librairies.concatmethode import concatenateList
 
 
 if __name__ == '__main__':

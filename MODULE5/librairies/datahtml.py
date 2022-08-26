@@ -1,11 +1,14 @@
+# importation des librairies pour effectuer les tàches de des questions 1 à 3
+
 from bs4 import BeautifulSoup
 import requests
 import json
-from .utils import Utils
+from utils import Utils
 
-
+# Lien vers la donnée à collecter
 BASE_URL = 'DATABASES\data-zIybdmYZoV4QSwgZkFtaB.html'
 
+# implimentation des classes necessaires pour repondre aux questions posées dans le projet:
 
 class HtmlFactory(object):
     @classmethod

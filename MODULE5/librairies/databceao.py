@@ -1,13 +1,18 @@
-import json
-import requests
+# importation des librairies:
+
 from bs4 import BeautifulSoup
-from collections import defaultdict
+import requests
 import random
+import json
+
+
+# lien du site web où on va collecter nos données:
 
 PATH_URL = 'cours/cours-des-devises-contre-Franc-CFA-appliquer-aux-transferts'
 URL = f'https://www.bceao.int/fr/{PATH_URL}'
 
-#Classe pour recuperer la donnee depuis l'url 
+
+#Classes pour recuperer la donnee depuis l'url:
 
 class DataSouper(object):
     @classmethod
@@ -87,8 +92,10 @@ class CurrencyScrapper(object):
         data = CurrencyScrapper.makeCurrencyList(URL)
         result = CurrencyScrapper.addRandomDevise(data)
         myList = CurrencyScrapper.addXofConversion(result)
-        
-        return myList
-        
 
+        # Voir le output de notre trvail:
+        print(myList)
+
+        return
+        
 CurrencyScrapper.main()
