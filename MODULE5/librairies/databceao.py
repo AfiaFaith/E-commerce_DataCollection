@@ -7,7 +7,7 @@ import random
 PATH_URL = 'cours/cours-des-devises-contre-Franc-CFA-appliquer-aux-transferts'
 URL = f'https://www.bceao.int/fr/{PATH_URL}'
 
-#Classe pour recuperer la donnee depuis url 
+#Classe pour recuperer la donnee depuis l'url 
 
 class DataSouper(object):
     @classmethod
