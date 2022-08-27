@@ -1,0 +1,21 @@
+1. Ecrire un script python:
+
+URL: https://www.fabellashop.com/categorie-produit/maquillageongles/teint/
+
+	- pour récupérer la liste des produits
+	- le format est le suivant:
+		- title: nom du produit
+		- price: prix du produit
+		- quantity: 1
+		- currency: XOF/CFA
+
+2. Ecrire un script python:
+URL: http://www.floatrates.com/feeds.html 
+	- récupérer les converstions de devises
+	- afin d'ajouter à la liste de la question 1.
+		- la convertion selon 6 devises de votre choix
+		- puis convertir ces données en fichier EXCEL/CSV
+
+3. Lire une DATAFRAME.
+Ecrire un script python:
+	- Afficher le contenu du fichier obtenue à la question 2
